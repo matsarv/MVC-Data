@@ -1,0 +1,12 @@
+﻿@model Person
+
+<li class="row" id="listId-@Model.Id">
+    <div>
+        @Model.Id | @Model.Name | @Model.Phone | @Model.City &nbsp; |
+
+        @*<a class="btn btn-danger" asp-controller="People" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |*@
+        @*<a class="btn btn-danger" asp-controller="People" asp-action="Details" asp-route-id="@Model.Id">Details</a> |*@
+        <a class="btn btn-danger" asp-controller="People" asp-action="Delete" asp-route-id="@Model.Id">Delete</a> |
+    </div>
+</li>
+

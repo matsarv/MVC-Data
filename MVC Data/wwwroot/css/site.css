@@ -125,8 +125,10 @@ li > form {
 
 li > div {
     float: left;
+    list-style:none;
 }
 
 li {
-    padding: 2px;
+    padding: 5px;
+    list-style: none;
 }
