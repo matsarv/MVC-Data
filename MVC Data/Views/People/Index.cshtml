@@ -1,0 +1,78 @@
+﻿@model MVC_Data.Models.PersonView
+
+@{
+    ViewData["Title"] = "People List";
+}
+
+<h2>Peoples List</h2>
+
+<p>Add person to the peoples list</p>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="People" asp-action="Create" method="get">
+    <p>
+        <input type="text" name="name" value="" placeholder="Name" />
+        <input type="number" min="0" name="phone" value="" placeholder="Phone" />
+        <input type="text" name="city" value="" placeholder="City" />
+    </p>
+    <button>Create</button>
+</form>
+
+<hr />
+
+<p>Filer Peoples List on Name or City</p>
+
+
+<form asp-controller="People" asp-action="Index" method="get">
+    <p>
+        <input type="text" asp-for="SearchString" placeholder="Search for..." />
+    </p><p>
+        <button>Filter</button>
+    </p>
+
+</form>
+
+<form asp-controller="People" asp-action="Index" method="get">
+    <button>Reset</button>
+</form>
+
+
+
+<hr />
+
+<p>Peoples list</p>
+
+<table>
+
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Phone</td>
+            <td>City</td>
+            <td></td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.persons)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Phone</td>
+                <td>@item.City</td>
+                <td>
+                    <form asp-controller="People" asp-action="Delete" method="get">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
