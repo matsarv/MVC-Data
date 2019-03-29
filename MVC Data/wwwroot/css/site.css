@@ -132,3 +132,9 @@ li {
     padding: 5px;
     list-style: none;
 }
+
+hr {
+    color: #808080;
+    background-color: #808080;
+    height: 5px;
+}
