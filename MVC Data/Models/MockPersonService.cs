@@ -10,16 +10,16 @@ namespace MVC_Data.Models
     {
         PersonView pv = new PersonView();
 
-        private int idCount = 1;
+        private int idCount = 6;
 
         public MockPersonService()
         {
             pv.persons.Add(new Person() { Id = 0, Name = "Nisse Person", Phone = 0731234567, City = "Växjö" });
-            //pv.persons.Add(new Person() { Id = 1, Name = "Nisse Person", Phone = 0731234567, City = "Växjö" });
-            //pv.persons.Add(new Person() { Id = 2, Name = "Kalle Nilsson", Phone = 0731234567, City = "Växjö" });
-            //pv.persons.Add(new Person() { Id = 3, Name = "Kalle Karlsson", Phone = 0731234567, City = "Kalmar" });
-            //pv.persons.Add(new Person() { Id = 4, Name = "Pelle Nilsson", Phone = 0731234567, City = "Kalmar" });
-            //pv.persons.Add(new Person() { Id = 5, Name = "Pelle Person", Phone = 0731234567, City = "Lund" });
+            pv.persons.Add(new Person() { Id = 1, Name = "Nisse Karlsson", Phone = 0731234567, City = "Växjö" });
+            pv.persons.Add(new Person() { Id = 2, Name = "Kalle Nilsson", Phone = 0731234567, City = "Växjö" });
+            pv.persons.Add(new Person() { Id = 3, Name = "Kalle Karlsson", Phone = 0731234567, City = "Kalmar" });
+            pv.persons.Add(new Person() { Id = 4, Name = "Pelle Nilsson", Phone = 0731234567, City = "Kalmar" });
+            pv.persons.Add(new Person() { Id = 5, Name = "Pelle Person", Phone = 0731234567, City = "Lund" });
         }
 
         public List<Person> AllPersons()
@@ -90,7 +90,7 @@ namespace MVC_Data.Models
 
         public List<Person> FilterPersonCity(string searchString)
         {
-            var people = pv.persons.Where(s => s.Name.Contains(searchString) || s.City.Contains(searchString)).ToList();
+            var people = pv.persons.Where(s => s.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase) || s.City.Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
 
             return (people);
         }

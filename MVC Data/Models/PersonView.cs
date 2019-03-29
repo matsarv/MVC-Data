@@ -9,6 +9,5 @@ namespace MVC_Data.Models
     {
         public List<Person> persons = new List<Person>();
         public string SearchString { get; set; }
-
     }
 }

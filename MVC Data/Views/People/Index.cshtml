@@ -6,11 +6,10 @@
 
 <h2>Peoples List</h2>
 
-<hr />
-
-<div class="row">
+<div class="row input">
 
     <div class="col-md-8">
+
         <p>Add person to the peoples list</p>
 
         <form asp-controller="People" asp-action="Create" method="get">
@@ -18,20 +17,19 @@
                 <input type="text" name="name" value="" placeholder="Name" />
                 <input type="number" min="0" name="phone" value="" placeholder="Phone" />
                 <input type="text" name="city" value="" placeholder="City" />
-                </p>
-                <input class="btn btn-danger" type="submit" value="Create" />
-            
+            </p>
+            <input class="btn btn-danger" type="submit" value="Create" />
+
         </form>
     </div>
 
     <div class="col-md-4">
 
-        <p>Filer Peoples List on Name or City</p>
-
+        <p>Filer People</p>
 
         <form asp-controller="People" asp-action="Index" method="get">
             <p>
-                <input type="text" asp-for="SearchString" placeholder="Search for..." />
+                <input type="text" asp-for="SearchString" placeholder="Name or City" />
                 <input class="btn btn-danger" type="submit" value="Filter" />
             </p>
         </form>
@@ -44,9 +42,6 @@
 </div>
 
 <hr />
-
-<p>Peoples list</p>
-
 
 <div class="list-container">
     <ul>

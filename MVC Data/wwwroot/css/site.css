@@ -40,10 +40,10 @@ nav > ul > li {
     background-color: black;
 }
 
-nav > ul > li > a {
-    color: white;
-    text-decoration: underline;
-   }
+    nav > ul > li > a {
+        color: white;
+        text-decoration: underline;
+    }
 
 a {
     color: white;
@@ -111,12 +111,11 @@ td {
 
 input {
     border-radius: 5px;
-    border: 3px solid silver;
 }
 
-    input[type=number] {
-        border: 4px solid silver;
-    }
+/*input[type=number] {
+    border-radius: 5px;
+}*/
 
 li > form {
     float: right;
@@ -125,16 +124,42 @@ li > form {
 
 li > div {
     float: left;
-    list-style:none;
+    list-style: none;
 }
 
 li {
-    padding: 5px;
+    padding: 5px 0;
     list-style: none;
 }
 
 hr {
-    color: #808080;
-    background-color: #808080;
-    height: 5px;
+    color: #efefef;
+    background-color: #efefef;
+    height: 8px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.list-container {
+
+    padding-right:5px;
+}
+.row.input {
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.row.partial:nth-child(odd) {
+    background-color: #2E9AFE;
+    border-radius: 4px;
+}
+
+.row.partial:nth-child(even) {
+    background-color: #0080FF;
+    border-radius: 4px;
+}
+
+#delete {
+    float: right;
 }
