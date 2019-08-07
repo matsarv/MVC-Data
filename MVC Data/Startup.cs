@@ -20,6 +20,8 @@ namespace MVC_Data
             // Dependency Injection
             services.AddSingleton<IPersonService, MockPersonService>();
 
+            // Replace when Database
+
             services.AddMvc();
         }
 
